@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import EsriLoaderReact from 'esri-loader-react';
-const Request = require('../helpers/request.js');
 
 
 class MapContainer extends PureComponent {
@@ -8,37 +7,32 @@ class MapContainer extends PureComponent {
   constructor(props){
     super(props)
     this.state = {
-      allCountryCoords: null,
-      countries: [],
+      mapInfoCoords: null,
+      mapInfoObjects: [],
       currentCountry: null
     };
-    // this.state = {map: null}
     this.onReadyCallback = this.onReadyCallback.bind(this);
   }
 
   componentDidMount(){
-    // this should change to get information from the database
     const url = 'http://localhost:3000/api/mapDataInfo';
     fetch(url)
     .then(res => res.json())
-    .then( (countriesData) => {
+    .then( (mapInfoData) => {
 
-      const allCountriesLatLng = countriesData.map((country, index) => {
-        return country.latlng.reverse()
+      const allCountriesLatLng = mapInfoData.map((mapInfo, index) => {
+        return mapInfo.latlng.reverse()
       });
 
       this.setState({
-        countries: countriesData,
-        allCountryCoords: allCountriesLatLng
+        mapInfoObjects: mapInfoData,
+        mapInfoCoords: allCountriesLatLng
       })
     })
-    // .then(countriesData => console.log(countriesData))
     .catch(error => console.log("Error:", error))
   }
 
   onReadyCallback({loadedModules: [Map, MapView, Graphic, BasemapToggle, Color, PictureMarkerSymbol], containerNode}){
-
-      // console.log("this.state.allCountryCoords", this.state.allCountryCoords)
 
       const theMap = new Map({
         basemap: 'satellite'
@@ -47,17 +41,17 @@ class MapContainer extends PureComponent {
       const mapView = new MapView({
         container: containerNode,
         center: [-3.2, 55.5],
-        zoom: 4,
+        zoom: 7,
         map: theMap
       });
 
-      const uniqueCountryMarkers = this.state.countries.map((country) => {
+      const uniqueCountryMarkers = this.state.mapInfoObjects.map((mapInfo) => {
 
         return new Graphic({
           geometry: {
             type: 'point',
-            longitude: country.latlng[0],
-            latitude: country.latlng[1]
+            longitude: mapInfo.latlng[0],
+            latitude: mapInfo.latlng[1]
           },
           symbol: {
             type: "picture-marker",
@@ -71,17 +65,17 @@ class MapContainer extends PureComponent {
             // }
           },
           attributes: {
-            Country: country.name,
-            Region: country.region,
-            Population: country.population
+            Name: mapInfo.name,
+            Description: mapInfo.description,
+            Price: mapInfo.price
           },
           popupTemplate: {
-            title: "{Country}",
+            title: "{Name}",
             content: [
               {
                 type: "fields",
                 fieldInfos: [
-                  {fieldName: "Country"}, {fieldName: "Region"}, {fieldName: "Population"}
+                  {fieldName: "Name"}, {fieldName: "Description"}, {fieldName: "Price"}
                 ]
               }
             ]
@@ -107,7 +101,7 @@ class MapContainer extends PureComponent {
       url: 'https://js.arcgis.com/4.7/'
     };
 
-    if ( !this.state.allCountryCoords ) {
+    if ( !this.state.mapInfoCoords ) {
       var componentToRender = (
         <p>Loading data ....</p>
       )

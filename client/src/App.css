@@ -51,6 +51,11 @@ h2.esri-popup__header-title {
   font-size: 16px;
 }
 
+.esri-table tr th {
+  width: 20%;
+
+}
+
 /* .esri-popup__main-container {
 
     background-color: #FFF;
