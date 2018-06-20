@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Cabin Sketch', cursive;
   font-size: 30px;
   background: url('IMG_6218.JPG') no-repeat center center fixed;
   background-size: cover;
@@ -38,18 +38,35 @@ body {
   border: solid 1px black;
   margin: 0 auto;
 }
-
 .esri-table {
   color: #3c8bb3;
 }
 
 .esri-widget {
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Cabin Sketch', cursive;
+  text-align: left;
   font-size: auto;
 }
 
 h2.esri-popup__header-title {
-  font-size: 22px;
+  font-size: 16px;
+  padding-left: 23px;
+}
+
+.esri-popup__header {
+  /* background-color: #d2691e; */
+  background-color: #b8732f;
+}
+
+.esri-popup__main-container{
+  width: 450px;
+  background-color: #04000059;
+  color: white;
+}
+
+.esri-popup__button{
+  color: white;
+
 }
 
 .esri-attribution {
@@ -58,17 +75,32 @@ h2.esri-popup__header-title {
 
 .esri-table tr td,
 .esri-table tr th {
-  font-size: 16px;
+  font-size: 12px;
+  color:white;
+}
+
+.esri-table tr:nth-child(odd){
+  background-color: rgba(8, 0, 0, 0.44);
+}
+
+.esri-table tr:nth-child(even){
+  background-color: rgba(205, 133, 70, 0.61);
 }
 
 .esri-table tr th {
-  width: 20%;
+  width: 30%;
+  text-align: center;
+  border-right: 1px solid rgba(253, 253, 253, 0.55);
+  border-left: 1px solid rgba(253, 253, 253);
+}
 
+.esri-table tr td {
+  border-right: 1px solid rgba(253, 253, 253);
 }
 
 .siteInformation {
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 15%;
+  margin-right: 15%;
   margin-top: 25px;
   background-color: #def6fb8a;
   border: solid;
@@ -77,39 +109,48 @@ h2.esri-popup__header-title {
 .individualSiteInfo h3 {
   margin-top: 10px;
   margin-bottom: 10px;
-  font-size: 25px;
-  font-family: fantasy;
+  font-size: 27px;
+  font-family: 'Cabin Sketch', cursive;
 }
 
 .individualSiteInfo {
-  margin-left: 5px;
+  margin-left: 15px;
   margin-right: 5px;
+  text-align: left;
 }
 
 .siteInformation h2 {
   margin-top: 20px;
   margin-bottom: 20px;
-  font-size: 35px;
+  font-size: 32px;
   text-decoration: underline;
+  letter-spacing: 2px;
+}
+
+.siteInformation p {
+  margin-top: 10px;
+  margin-bottom: 2px;
+  font-size: 18px;
 }
 
 h2 {
   margin-top: 5px;
   margin-bottom: 5px;
+  font-size: 55px;
 }
 
 p {
   margin-top: 2px;
   margin-bottom: 2px;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 #backToTop{
   color: black;
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Cabin Sketch', cursive;
   font-size: 18px;
   border-radius: 12px;
-  width: 100px;
+  width: 140px;
 }
 
 #backToTop:hover {

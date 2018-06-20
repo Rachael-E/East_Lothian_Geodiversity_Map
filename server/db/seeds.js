@@ -18,12 +18,6 @@ db.mapDataInfo.insertMany([
     "latlng": [55.921705, -2.4799303]
   },
   {
-    "name": "Gala Law",
-    "description": "The site is a small quarry situated on the eastern slope of Gala Law, located at the northern edge of the Lammermuir Hills, 11km south of Haddington, and 2km north-east of Lammer Law. The quarry exposes a sequence of greywackes, silstones, mydstones and shales belonging to the Gala Group of Silurian Age.",
-    "features": "Lower Palaeozoic rocks, fossils ",
-    "latlng": [55.861072,	-2.7427626]
-  },
-  {
     "name": "Gin Head (Tantallon)",
     "description": "Gin Head is a rocky peninsula c. 300 m to the north-west of Tantallon Castle. The rocks exposed in the rock platform at the base of the cliffs are of primary interest: however, access to the site is difficult and dependent on the tides. Fossils, including the jawbone of a Lower Carboniferous tetrapod, ostracods, lungfish toothplates and wood, have been found historically at the site, making it extremely important for understanding Lower Carboniferous fauna. ",
     "features": "Lower Carboniferous palaeontology ",
@@ -39,7 +33,7 @@ db.mapDataInfo.insertMany([
     "name": "North Berwick Shore",
     "description": "The site spans a 2 km section of coastline at North Berwick, extending from Partan Craig in the east, to the North Berwick Bay west. Cliff and coastal platform sections along the coast at the site expose dominantly volcanic and some sedimentary strata of Lower Carboniferous age. ",
     "features": "Carboniferous volcanic rocks (Garleton Hills Volcanic Formation), coastal geomorphology ",
-    "latlng": [56.060053	-2.7077382]
+    "latlng": [56.060053,	-2.7077382]
   },
   {
     "name": "Yellow Craigs Shore",
@@ -69,13 +63,13 @@ db.mapDataInfo.insertMany([
     "name": "Dirleton Castle ",
     "description": "Dirleton Castle is located within the village of Dirleton and is perched on a porphyritic trachyte crag within the grounds. The igneous rock is part of the Garleton Hills Volcanic Formation and was extruded as lava during the Carboniferous age. The ruined castle dates back to the late 13th Century and underwent three phases of building. Due to its elevated position it was ideal for defensive purposes from land and sea. ",
     "features": "Carboniferous volcanic rocks (Garleton Hills Volcanic Formation), historical association ",
-    "latlng": [56.037014	-2.7780937]
+    "latlng": [56.037014,	-2.7780937]
   },
   {
     "name": "Craigs Quarry ",
     "description": "Craigs Quarry (infilled since the 1970’s) is located to the west of the village of Dirleton, situated off the A198. The site is now known as Craigs Plantation and is used by an archery club. The plantation contains small out crops of porphyritic trachyte, belonging to the Garleton Hills Volcanic Formation and of Carboniferous age. ",
     "features": "Carboniferous volcanic rocks (Garleton Hills Volcanic Formation) ",
-    "latlng": [56.042345	-2.7904644]
+    "latlng": [56.042345,	-2.7904644]
   },
   {
     "name": "Peppercraig Quarry ",
@@ -87,7 +81,7 @@ db.mapDataInfo.insertMany([
     "name": "Gullane Shore ",
     "description": "The site comprises a 1.5 km section of coastline located to the west of the town of Gullane between Gullane Point and Bleaching Rocks. Cliff and coastal platform sections along the coast at the site expose sedimentary strata of the Dinantian age (early Carboniferous) Gullane Formation and younger intrusive igneous rocks. ",
     "features": "Carboniferous sedimentary rocks (Gullane Formation), coastal geomorphology ",
-    "latlng": [56.037737	-2.858774]
+    "latlng": [56.037737,	-2.858774]
   },
   {
     "name": "Kilspindie Shore and Aberlady Point ",

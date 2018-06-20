@@ -66,7 +66,7 @@ class MapContainer extends PureComponent {
             // }
           },
           attributes: {
-            Name: mapInfo.name,
+            Name: mapInfo.name.toUpperCase(),
             Description: mapInfo.description,
             "Geological Features": mapInfo.features
           },
@@ -76,7 +76,7 @@ class MapContainer extends PureComponent {
               {
                 type: "fields",
                 fieldInfos: [
-                  {fieldName: "Name"}, {fieldName: "Description"}, {fieldName: "Geological Features"}
+                   {fieldName: "Description"}, {fieldName: "Geological Features"}
                 ]
               }
             ]
