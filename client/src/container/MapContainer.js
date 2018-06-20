@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import EsriLoaderReact from 'esri-loader-react';
+import MapList from '../components/MapInfoDetail';
 
 
 class MapContainer extends PureComponent {
@@ -35,13 +36,13 @@ class MapContainer extends PureComponent {
   onReadyCallback({loadedModules: [Map, MapView, Graphic, BasemapToggle, Color, PictureMarkerSymbol], containerNode}){
 
       const theMap = new Map({
-        basemap: 'satellite'
+        basemap: 'topo'
       });
 
       const mapView = new MapView({
         container: containerNode,
-        center: [-3.2, 55.5],
-        zoom: 7,
+        center: [-2.7585052, 55.970854],
+        zoom: 9.5,
         map: theMap
       });
 
@@ -55,9 +56,9 @@ class MapContainer extends PureComponent {
           },
           symbol: {
             type: "picture-marker",
-            url: "http://static.arcgis.com/images/Symbols/Basic/LightBlueStickpin.png",
-            width: 20,
-            height: 20
+            url: "http://static.arcgis.com/images/Symbols/OutdoorRecreation/Park.png",
+            width: 12,
+            height: 12
             // color: new Color ("#2454a0"),
             // outline: {
             //   color: [255, 255, 255],
@@ -67,7 +68,7 @@ class MapContainer extends PureComponent {
           attributes: {
             Name: mapInfo.name,
             Description: mapInfo.description,
-            Price: mapInfo.price
+            "Geological Features": mapInfo.features
           },
           popupTemplate: {
             title: "{Name}",
@@ -75,7 +76,7 @@ class MapContainer extends PureComponent {
               {
                 type: "fields",
                 fieldInfos: [
-                  {fieldName: "Name"}, {fieldName: "Description"}, {fieldName: "Price"}
+                  {fieldName: "Name"}, {fieldName: "Description"}, {fieldName: "Geological Features"}
                 ]
               }
             ]
@@ -88,7 +89,7 @@ class MapContainer extends PureComponent {
 
       const toggle = new BasemapToggle({
         view: mapView,
-        nextBasemap: "oceans"
+        nextBasemap: "hybrid"
       });
       mapView.ui.add(toggle, "top-right");
 
@@ -117,11 +118,15 @@ class MapContainer extends PureComponent {
 
     return (
       <div className ="App">
-        <h3>Countries of the World</h3>
-        <p> Click on a pin to find out more about a country </p>
+        <h2>East Lothian Geodiversity Sites</h2>
+        <p> Click on an icon to find out more about a site </p>
         {componentToRender}
+        <MapList
+          mapObjects={this.state.mapInfoObjects} />
       </div>
+
     );
+
   }
 }
 

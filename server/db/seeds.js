@@ -7,7 +7,7 @@ db.dropDatabase();
 db.mapDataInfo.insertMany([
   {
     "name": "Gala Law",
-    "description": "The site is a small quarry situated on the eastern slope of Gala Law, located at the northern edge of the Lammermuir Hills, 11km south of Haddington, and 2km north-east of Lammer Law. The quarry exposes a sequence of greywackes, silstones, mydstones and shales belonging to the Gala Group of Silurian Age.",
+    "description": "The site is a small quarry situated on the eastern slope of Gala Law, located at the northern edge of the Lammermuir Hills, 11km south of Haddington, and 2km north-east of Lammer Law. The quarry exposes a sequence of greywackes, siltstones, mudstones and shales belonging to the Gala Group of Silurian Age.",
     "features": "Lower Palaeozoic rocks, fossils ",
     "latlng": [55.861072,	-2.7427626]
   },
