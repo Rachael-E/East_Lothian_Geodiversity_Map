@@ -36,7 +36,7 @@ class MapContainer extends PureComponent {
   onReadyCallback({loadedModules: [Map, MapView, Graphic, BasemapToggle, Color, PictureMarkerSymbol], containerNode}){
 
       const theMap = new Map({
-        basemap: 'topo'
+        basemap: 'hybrid'
       });
 
       const mapView = new MapView({
@@ -57,8 +57,8 @@ class MapContainer extends PureComponent {
           symbol: {
             type: "picture-marker",
             url: "http://static.arcgis.com/images/Symbols/OutdoorRecreation/Park.png",
-            width: 12,
-            height: 12
+            width: 14,
+            height: 14
             // color: new Color ("#2454a0"),
             // outline: {
             //   color: [255, 255, 255],
@@ -89,9 +89,9 @@ class MapContainer extends PureComponent {
 
       const toggle = new BasemapToggle({
         view: mapView,
-        nextBasemap: "hybrid"
+        nextBasemap: "topo"
       });
-      mapView.ui.add(toggle, "top-right");
+      mapView.ui.add(toggle, "bottom-right");
 
     }
 

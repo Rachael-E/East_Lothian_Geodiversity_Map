@@ -3,6 +3,9 @@ body {
   padding: 0;
   font-family: 'Amatic SC', cursive;
   font-size: 30px;
+  background: url('IMG_6218.JPG') no-repeat center center fixed;
+  background-size: cover;
+
 }
 
 .App {
@@ -31,7 +34,7 @@ body {
 
 .map-view {
   width: 750px;
-  height: 400px;
+  height: 500px;
   border: solid 1px black;
   margin: 0 auto;
 }
@@ -63,16 +66,12 @@ h2.esri-popup__header-title {
 
 }
 
-/* .esri-popup__main-container {
-
-    background-color: #FFF;
-
-} */
-
 .siteInformation {
-  margin-left: 100px;
-  margin-right: 100px;
-  background-color: gray;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 25px;
+  background-color: #def6fb8a;
+  border: solid;
 }
 
 .individualSiteInfo h3 {
@@ -82,12 +81,16 @@ h2.esri-popup__header-title {
   font-family: fantasy;
 }
 
+.individualSiteInfo {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
 .siteInformation h2 {
-  margin-top: 50px;
+  margin-top: 20px;
   margin-bottom: 20px;
   font-size: 35px;
   text-decoration: underline;
-
 }
 
 h2 {
@@ -99,4 +102,16 @@ p {
   margin-top: 2px;
   margin-bottom: 2px;
   font-size: 20px;
+}
+
+#backToTop{
+  color: black;
+  font-family: 'Amatic SC', cursive;
+  font-size: 18px;
+  border-radius: 12px;
+  width: 100px;
+}
+
+#backToTop:hover {
+  background-color: #a66934;
 }
