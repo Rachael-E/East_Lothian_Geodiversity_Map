@@ -56,9 +56,9 @@ class MapContainer extends PureComponent {
           },
           symbol: {
             type: "picture-marker",
-            url: "http://static.arcgis.com/images/Symbols/OutdoorRecreation/Park.png",
-            width: 14,
-            height: 14
+            url: "http://static.arcgis.com/images/Symbols/Basic/OrangeSphere.png",
+            width: 30,
+            height: 30
             // color: new Color ("#2454a0"),
             // outline: {
             //   color: [255, 255, 255],
