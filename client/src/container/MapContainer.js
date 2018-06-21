@@ -24,10 +24,10 @@ class MapContainer extends PureComponent {
         return mapInfo.latlng.reverse()
       });
 
-      geoDivInfo.sort(function(first, second) {
-        var localityNameFirst = first.name;
-        var localityNameSecond = second.name;
-        return (localityNameFirst < localityNameSecond) ? -1 : (localityNameFirst > localityNameSecond) ? 1 : 0;
+      geoDivInfo.sort(function(firstElement, nextElement) {
+        var localityNameFirst = firstElement.name;
+        var localityNameNext = nextElement.name;
+        return (localityNameFirst < localityNameNext) ? -1 : (localityNameFirst > localityNameNext) ? 1 : 0;
       });
 
       this.setState({
