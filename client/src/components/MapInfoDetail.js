@@ -8,8 +8,8 @@ const MapInfoDetail = (props) => {
 
   const infoList = props.mapObjects.map((object, index) => {
     return (
-      <div className = "individualSiteInfo">
-      <h3 key={index}>{object.name}</h3>
+      <div key={index} className = "individualSiteInfo">
+      <h3 >{object.name}</h3>
         <p><u>Site Description</u><br/> {object.description}<br/></p>
         <p><u>Geological Features:</u> {object.features}</p>
         <button id="backToTop" onClick={scrollWin}> Return to Map </button>

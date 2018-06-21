@@ -8,9 +8,8 @@ class MapContainer extends PureComponent {
   constructor(props){
     super(props)
     this.state = {
-      mapInfoCoords: null,
-      mapInfoObjects: [],
-      currentCountry: null
+      geoDivCoords: null,
+      geoDivInfoObjects: [],
     };
     this.onReadyCallback = this.onReadyCallback.bind(this);
   }
@@ -19,15 +18,21 @@ class MapContainer extends PureComponent {
     const url = 'http://localhost:3000/api/mapDataInfo';
     fetch(url)
     .then(res => res.json())
-    .then( (mapInfoData) => {
+    .then( (geoDivInfo) => {
 
-      const allCountriesLatLng = mapInfoData.map((mapInfo, index) => {
+      const allGeoDivData = geoDivInfo.map((mapInfo, index) => {
         return mapInfo.latlng.reverse()
       });
 
+      geoDivInfo.sort(function(first, second) {
+        var localityNameFirst = first.name;
+        var localityNameSecond = second.name;
+        return (localityNameFirst < localityNameSecond) ? -1 : (localityNameFirst > localityNameSecond) ? 1 : 0;
+      });
+
       this.setState({
-        mapInfoObjects: mapInfoData,
-        mapInfoCoords: allCountriesLatLng
+        geoDivInfoObjects: geoDivInfo,
+        geoDivCoords: allGeoDivData
       })
     })
     .catch(error => console.log("Error:", error))
@@ -46,7 +51,7 @@ class MapContainer extends PureComponent {
         map: theMap
       });
 
-      const uniqueCountryMarkers = this.state.mapInfoObjects.map((mapInfo) => {
+      const uniqueCountryMarkers = this.state.geoDivInfoObjects.map((mapInfo) => {
 
         return new Graphic({
           geometry: {
@@ -102,7 +107,7 @@ class MapContainer extends PureComponent {
       url: 'https://js.arcgis.com/4.7/'
     };
 
-    if ( !this.state.mapInfoCoords ) {
+    if ( !this.state.geoDivCoords ) {
       var componentToRender = (
         <p>Loading data ....</p>
       )
@@ -122,7 +127,7 @@ class MapContainer extends PureComponent {
         <p> Click on an icon to find out more about a site </p>
         {componentToRender}
         <MapList
-          mapObjects={this.state.mapInfoObjects} />
+          mapObjects={this.state.geoDivInfoObjects} />
       </div>
 
     );

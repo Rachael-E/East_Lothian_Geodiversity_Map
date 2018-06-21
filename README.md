@@ -1,6 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+This project uses the esri-loader-react and esri-loader modules using documentation [from this GitHub repo](https://github.com/davetimmins/esri-loader-react). A hard coded API was created using data from the British Geological Survey's [East Lothian Geodiversity Audit](http://nora.nerc.ac.uk/id/eprint/509518/), and stored in a MongoDB, and then served to the client via an Express server.
 
-Below you will find some information on how to perform common tasks.<br>
+
+The map pin icon is sourced from [this tutorial] (https://developers.arcgis.com/javascript/3/sandbox/sandbox.html?sample=portal_symbols) from the ArcGIS API documentation.
+
+
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
 ## Table of Contents
