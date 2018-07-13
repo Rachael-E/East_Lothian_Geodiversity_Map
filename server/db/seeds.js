@@ -2,7 +2,7 @@
 use mapdata;
 db.dropDatabase();
 // Initialize Mongo collection
-// Add in castle objects for seeding the database
+// Add in Geodiversity objects for seeding the database
 
 db.mapDataInfo.insertMany([
   {
