@@ -1,3 +1,8 @@
+A Javascript web application which shows the location of British Geological Survey audited geodiversity sites of East Lothian, Scotland, on a map, and when clicked, displays information about the particular site. 
+
+![Screenshot of Home Page](EastLothian_Home.png)
+![Screenshot of Detail](EastLothian_Detail.png)
+
 This project uses the esri-loader-react and esri-loader modules using documentation [from this GitHub repo](https://github.com/davetimmins/esri-loader-react). A hard coded API was created using data from the British Geological Survey's [East Lothian Geodiversity Audit](http://nora.nerc.ac.uk/id/eprint/509518/), and stored in a MongoDB, and then served to the client via an Express server.
 
 
