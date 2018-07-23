@@ -1,4 +1,4 @@
-## Connecting a React App with an Express backend app: an example using local API data and the ArcGIS JS API  
+## Connecting a React App with an Express backend server: an example using local API geographical data stored in MongoDB, and displayed visually using the ArcGIS JS API  
 
 ### Introduction 
 If you're a newbie to coding as I am, you'll recognise that good note keeping and documenting your coding approach, workflows and outcomes are an essential part in your software developmenet journey. The process of documenting your code not only allows you to reinforce and consolidate your learning, but also provides you (and your colleagues, instructors, peers, maybe your cat) with a solid record and proof that you understand the concepts. Strong self documentation means that you can also refer back to your own notes at any point in the future, as well as refer other developers to your thoughts and workflow if you're brave enough to put it out there as part of your GitHub repo. 
