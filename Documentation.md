@@ -112,10 +112,7 @@ Now that the data has been safely set to the state of the app (having first requ
 3. The Map module allows the rendering of a map with a chosen basemap (e.g. satellite, oceanographic, hybrid, topo) `const theMap = new Map({basemap: 'hybrid'});`
 4. The MapView module controls the position of the map when loaded (e.g. where the center of the map should be in long/lat, how zoomed in should it be and what should the map be: in this case, it points to the const variable 'theMap' in step 4)
 	`    const mapView = new MapView({container: containerNode, center: [long, lat], zoom: 9.5, map: theMap});` 
-5. The Graphic module allows insertion of map pins or markers for visually showing sites of interests on a map. However, be mindful that the ArcGIS JS API uses long/lat notation and not lat/long: using a.reverse() on individual latlong arrays may be required depending on data structure. 
-
- `const uniqueCountryMarkers = this.state.countries.map((country) => {}` 
- [See documentation for graphic options here.](https://developers.arcgis.com/javascript/latest/api-reference/esri-Graphic.html)
+5. The Graphic module allows insertion of map pins or markers for visually showing sites of interests on a map. However, be mindful that the ArcGIS JS API uses long/lat notation and not lat/long: using a.reverse() on individual latlong arrays may be required depending on data structure. `const uniqueCountryMarkers = this.state.countries.map((country) => {}` [See documentation for graphic options here.](https://developers.arcgis.com/javascript/latest/api-reference/esri-Graphic.html)
 6. Finally, BasemapToggle brings in functionality that allows the user to toggle between base maps.  
 7. Remember to bind the method onReadyCallback to the constructor. `this.onReadyCallback = this.onReadyCallback.bind(this);}`
 
