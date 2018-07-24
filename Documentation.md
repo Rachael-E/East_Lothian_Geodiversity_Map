@@ -88,7 +88,7 @@ Now that we have our front-end React client server set up, and our back-end Expr
 
 1. In MapContainer.js, we will set up a new method (inherited from PureComponent) which will allow us to access our local API and set the state of our component to that stored within the MongoDB.
 2. Set up the `componentDidMount(){}` method.
-2. This method requires a URL of where the data is sitting (in this case, our Express server is providing a direct URL to that via localhost3000/api/mapDataInfo). It will then fetch the data, turn the response of the data to JSON and then take that data for the user to do what they want. In this case we will take all of the data, and set it to the state of the GISObjectsFromDatabase. We can also map through this data to extract the lat long co-ordinates, and set these to the GISObjectsCoords state:
+3. This method requires a URL of where the data is sitting (in this case, our Express server is providing a direct URL to that via localhost3000/api/mapDataInfo). It will then fetch the data, turn the response of the data to JSON and then take that data for the user to do what they want. In this case we will take all of the data, and set it to the state of the GISObjectsFromDatabase. We can also map through this data to extract the lat long co-ordinates, and set these to the GISObjectsCoords state:
 `componentDidMount(){
     const url = 'http://localhost:3000/api/mapDataInfo';
     fetch(url)
@@ -113,7 +113,9 @@ Now that the data has been safely set to the state of the app (having first requ
 4. The MapView module controls the position of the map when loaded (e.g. where the center of the map should be in long/lat, how zoomed in should it be and what should the map be: in this case, it points to the const variable 'theMap' in step 4)
 	`    const mapView = new MapView({container: containerNode, center: [long, lat], zoom: 9.5, map: theMap});` 
 5. The Graphic module allows insertion of map pins or markers for visually showing sites of interests on a map. However, be mindful that the ArcGIS JS API uses long/lat notation and not lat/long: using a.reverse() on individual latlong arrays may be required depending on data structure. 
- `const uniqueCountryMarkers = this.state.countries.map((country) => {}` [See documentation for graphic options here.](https://developers.arcgis.com/javascript/latest/api-reference/esri-Graphic.html)
+
+ `const uniqueCountryMarkers = this.state.countries.map((country) => {}` 
+ [See documentation for graphic options here.](https://developers.arcgis.com/javascript/latest/api-reference/esri-Graphic.html)
 6. Finally, BasemapToggle brings in functionality that allows the user to toggle between base maps.  
 7. Remember to bind the method onReadyCallback to the constructor. `this.onReadyCallback = this.onReadyCallback.bind(this);}`
 
